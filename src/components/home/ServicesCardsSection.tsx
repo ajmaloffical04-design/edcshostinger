@@ -15,7 +15,7 @@ const cards = [
   {
     title: "Amer Services",
     desc: "Complete your UAE immigration and residency procedures quickly and efficiently with our professional Amer Services. We provide end-to-end assistance for individuals, families, and businesses.",
-    image: "/amer.jpeg",
+    image: "/amer.png",
     href: "/services/amer-services"
   },
   {
@@ -27,7 +27,7 @@ const cards = [
   {
     title: "DED Services",
     desc: "Comprehensive Dubai Department of Economy and Tourism (DET/DED) services for businesses at every stage. We simplify licensing, approvals, and compliance with fast, reliable support.",
-    image: "/dubai-economy-and-tourism.jpeg",
+    image: "/dubai-economy-and-tourism.png",
     href: "/services/ded-services"
   },
   {
@@ -80,12 +80,12 @@ export default function ServicesCardsSection() {
               <h3 className="text-xl font-semibold text-gray-900 mb-2">{card.title}</h3>
               <p className="text-gray-500 text-sm mb-6 flex-grow">{card.desc}</p>
               
-              <div className="h-40 w-full rounded-xl overflow-hidden mb-6 relative">
+              <div className="h-40 w-full rounded-xl overflow-hidden mb-6 relative bg-gray-50/50">
                 <Image 
                   src={card.image} 
                   alt={card.title} 
                   fill 
-                  className="object-cover"
+                  className={card.image.includes('.png') || card.image.includes('.jpeg') && !card.image.includes('unsplash') ? "object-contain p-4" : "object-cover"}
                 />
               </div>
 
