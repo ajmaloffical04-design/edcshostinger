@@ -80,12 +80,12 @@ export default function ServicesCardsSection() {
               <h3 className="text-xl font-semibold text-gray-900 mb-2">{card.title}</h3>
               <p className="text-gray-500 text-sm mb-6 flex-grow">{card.desc}</p>
               
-              <div className="h-40 w-full rounded-xl overflow-hidden mb-6 relative bg-[#f8f9fa]">
+              <div className={`h-40 w-full rounded-xl overflow-hidden mb-6 relative ${card.image.includes('.png') ? 'bg-white' : 'bg-gray-50/30'}`}>
                 <Image 
                   src={card.image} 
                   alt={card.title} 
                   fill 
-                  className={card.image.includes('.png') || (card.image.includes('.jpeg') && !card.image.includes('unsplash')) ? "object-contain object-center mix-blend-multiply scale-[1.15]" : "object-cover"}
+                  className={card.image.includes('.png') ? "object-contain p-2" : "object-cover"}
                 />
               </div>
 
