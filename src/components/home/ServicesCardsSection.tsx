@@ -9,25 +9,25 @@ const cards = [
   {
     title: "Golden Visa",
     desc: "This visa allows its holders to work and study in the United Arab Emirates without the need for a sponsor.",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=800&auto=format&fit=crop",
+    image: "/golden-visa.jpeg",
     href: "/services/golden-visa"
   },
   {
     title: "Amer Services",
     desc: "Complete your UAE immigration and residency procedures quickly and efficiently with our professional Amer Services. We provide end-to-end assistance for individuals, families, and businesses.",
-    image: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=800&auto=format&fit=crop",
+    image: "/amer.jpeg",
     href: "/services/amer-services"
   },
   {
     title: "Tasheel Services",
     desc: "Simplify your labor and employment procedures with our comprehensive Tasheel services. We provide fast, reliable, and government-compliant assistance for employers.",
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop",
+    image: "/tasheel.jpeg",
     href: "/services/tasheel-services"
   },
   {
     title: "DED Services",
     desc: "Comprehensive Dubai Department of Economy and Tourism (DET/DED) services for businesses at every stage. We simplify licensing, approvals, and compliance with fast, reliable support.",
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop",
+    image: "/dubai-economy-and-tourism.jpeg",
     href: "/services/ded-services"
   },
   {
