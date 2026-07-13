@@ -21,7 +21,7 @@ const cards = [
   {
     title: "Tasheel Services",
     desc: "Simplify your labor and employment procedures with our comprehensive Tasheel services. We provide fast, reliable, and government-compliant assistance for employers.",
-    image: "/tasheel.jpeg",
+    image: "/tasheel.png",
     href: "/services/tasheel-services"
   },
   {
