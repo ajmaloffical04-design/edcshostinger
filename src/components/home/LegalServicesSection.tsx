@@ -15,7 +15,7 @@ const cards = [
   {
     title: "Certificate Attestation Services",
     desc: "Get your documents officially authenticated for use in the UAE or abroad. We handle the complete attestation process for personal, educational, and commercial documents, ensuring compliance with the relevant authorities.",
-    image: "https://images.unsplash.com/photo-1628151015968-3a4429e9efee?q=80&w=800&auto=format&fit=crop",
+    image: "/certificate-attestation-services.jpeg",
     href: "/services/certificate-attestation"
   },
   {
@@ -27,13 +27,13 @@ const cards = [
   {
     title: "Emirates ID Services",
     desc: "Get your UAE Emirates ID services completed quickly and efficiently with our professional assistance. We provide complete support for new applications, renewals, replacements, and updates while ensuring a smooth and hassle-free process.",
-    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=800&auto=format&fit=crop",
+    image: "/emirates-identity-authority.png",
     href: "/services/emirates-id"
   },
   {
     title: "Medical Fitness Services",
     desc: "Complete your UAE medical fitness requirements quickly and efficiently with our professional assistance. We help individuals and businesses manage the medical fitness process required for residence visas, employment visas, family visas, and other immigration procedures.",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop",
+    image: "/dubai-health-authority.png",
     href: "/services/medical-fitness"
   }
 ];
@@ -76,7 +76,7 @@ export default function LegalServicesSection() {
                   src={card.image} 
                   alt={card.title} 
                   fill 
-                  className="object-cover"
+                  className={card.image.includes('.png') ? "object-contain p-2" : "object-cover"}
                 />
               </div>
 
