@@ -71,12 +71,12 @@ export default function LegalServicesSection() {
               <h3 className="text-xl font-semibold text-gray-900 mb-2">{card.title}</h3>
               <p className="text-gray-500 text-sm mb-6 flex-grow">{card.desc}</p>
               
-              <div className="h-40 w-full rounded-xl overflow-hidden mb-6 relative">
+              <div className="h-40 w-full rounded-xl overflow-hidden mb-6 relative bg-gray-50/10">
                 <Image 
                   src={card.image} 
                   alt={card.title} 
                   fill 
-                  className={card.image.includes('.png') ? "object-contain p-2" : "object-cover"}
+                  className="object-cover"
                 />
               </div>
 
