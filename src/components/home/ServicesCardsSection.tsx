@@ -32,7 +32,7 @@ const cards = [
   },
   {
     title: "UAE Free Zone Company Formation",
-    desc: "Establish your business in one of the UAE's leading Free Zones with a fast, cost-effective, and investor-friendly setup process. We help entrepreneurs, startups, SMEs, and international companies register and operate their businesses with complete compliance and professional support. Free Zones offer 100% foreign ownership, simplified procedures, and access to world-class business infrastructure.",
+    desc: "Establish your business in a UAE Free Zone with a fast, cost-effective setup process. We provide expert support for seamless registration and 100% foreign ownership.",
     image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=800&auto=format&fit=crop",
     href: "/services/free-zone-company-formation"
   },
