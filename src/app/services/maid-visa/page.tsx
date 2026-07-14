@@ -27,7 +27,7 @@ export default function MaidVisaPage() {
       <section className="relative h-[40vh] min-h-[300px] flex items-center bg-[#29323c]">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1584427457788-297eb0ea7fdb?q=80&w=1920&auto=format&fit=crop"
+            src="/maid-visa.png"
             alt="Maid Visa Application"
             fill
             className="object-cover opacity-40 mix-blend-overlay"

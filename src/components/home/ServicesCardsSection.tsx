@@ -51,7 +51,7 @@ const cards = [
   {
     title: "Maid Visa",
     desc: "Sponsoring a maid in Dubai is not an easy task. You need to get acquainted with all the standards and regulations which are involved in the process.",
-    image: "https://images.unsplash.com/photo-1584427457788-297eb0ea7fdb?q=80&w=800&auto=format&fit=crop",
+    image: "/maid-visa.png",
     href: "/services/maid-visa"
   }
 ];
