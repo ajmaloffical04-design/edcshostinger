@@ -1,5 +1,24 @@
 import React from 'react';
 
+// All known topic slugs — required for static export (output: 'export')
+// Add new slugs here as new documentation pages are created
+export function generateStaticParams() {
+  return [
+    // Category-level slugs
+    { topic: 'uae' },
+    { topic: 'attestations' },
+    // Individual topic slugs
+    { topic: 'employment-mainland' },
+    { topic: 'employment-freezone' },
+    { topic: 'family-sponsorship' },
+    { topic: 'golden-visa' },
+    { topic: 'degree' },
+    { topic: 'marriage' },
+    { topic: 'birth' },
+    { topic: 'commercial' },
+  ];
+}
+
 export default function Page({ params }: { params?: any }) {
   return (
     <div className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

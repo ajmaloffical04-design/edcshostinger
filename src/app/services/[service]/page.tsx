@@ -1,5 +1,19 @@
 import React from 'react';
 
+// All known service slugs — required for static export (output: 'export')
+export function generateStaticParams() {
+  return [
+    { service: 'visa-assistance' },
+    { service: 'document-attestation' },
+    { service: 'medical-typing' },
+    { service: 'translation' },
+    { service: 'immigration-consulting' },
+    { service: 'work-permit' },
+    { service: 'family-sponsorship' },
+    { service: 'business-setup' },
+  ];
+}
+
 export default function Page({ params }: { params?: any }) {
   return (
     <div className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

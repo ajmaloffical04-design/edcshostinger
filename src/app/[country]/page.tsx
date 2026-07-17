@@ -1,5 +1,21 @@
 import React from 'react';
 
+// All known country slugs — required for static export (output: 'export')
+export function generateStaticParams() {
+  return [
+    { country: 'uae' },
+    { country: 'saudi-arabia' },
+    { country: 'qatar' },
+    { country: 'kuwait' },
+    { country: 'bahrain' },
+    { country: 'oman' },
+    { country: 'uk' },
+    { country: 'usa' },
+    { country: 'canada' },
+    { country: 'australia' },
+  ];
+}
+
 export default function Page({ params }: { params?: any }) {
   return (
     <div className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
