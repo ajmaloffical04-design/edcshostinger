@@ -91,7 +91,7 @@ export default function ServicesCardsSection() {
 
               <div className="mt-auto">
                 <Link href={card.href} className="text-edcs-navy font-medium inline-flex items-center group w-fit hover:text-edcs-gold transition-colors">
-                  Read More
+                  Get Started
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
