@@ -4,7 +4,7 @@ import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function FloatingWhatsApp() {
-  const phoneNumber = "971501234567"; // Replace with actual WhatsApp number
+  const phoneNumber = "971586481006"; // Replace with actual WhatsApp number
   const message = encodeURIComponent("Hello, I need assistance with visa clearance services.");
 
   return (

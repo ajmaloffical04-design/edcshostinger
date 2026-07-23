@@ -40,7 +40,7 @@ export default function Footer() {
               Fast & Trusted Visa Clearance Services for GCC Countries. We provide premium document processing and consultancy for a seamless international transition.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-edcs-gold transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=61556611160815" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-edcs-gold transition-colors">
                 <span className="sr-only">Facebook</span>
                 <FacebookIcon className="h-5 w-5" />
               </a>
@@ -48,7 +48,7 @@ export default function Footer() {
                 <span className="sr-only">Twitter</span>
                 <TwitterIcon className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-edcs-gold transition-colors">
+              <a href="https://www.instagram.com/edcs_1982" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-edcs-gold transition-colors">
                 <span className="sr-only">Instagram</span>
                 <InstagramIcon className="h-5 w-5" />
               </a>
