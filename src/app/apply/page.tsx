@@ -14,19 +14,10 @@ function ApplyFormContent() {
 
   const [formData, setFormData] = useState({
     applicantName: "",
-    sponsorName: "",
-    sponsorEmail: "",
-    dependentRelation: "",
-    sponsorMobile: "",
-    sponsorMobileCode: "+971",
-    whatsappNumber: "",
-    whatsappCode: "+971",
-    iban: "",
-    insideOutside: "Inside",
-    poBox: "",
-    address: "",
+    email: "",
+    mobileCode: "+971",
+    mobile: "",
     remarks: "",
-    paymentMethod: "",
     files: [] as File[],
   });
 
@@ -67,22 +58,14 @@ function ApplyFormContent() {
       
       // Form Subjects and routing
       submissionData.append("subject", `New Application for ${formattedService} - ${formData.applicantName}`);
-      submissionData.append("from_name", formData.sponsorName || formData.applicantName);
+      submissionData.append("from_name", formData.applicantName);
       
       // Append all form fields
       submissionData.append("Service Requested", formattedService);
       submissionData.append("Applicant Name", formData.applicantName);
-      submissionData.append("Sponsor Name", formData.sponsorName);
-      submissionData.append("Sponsor Email", formData.sponsorEmail);
-      if (formData.dependentRelation) submissionData.append("Dependent Relation", formData.dependentRelation);
-      submissionData.append("Sponsor Mobile", `${formData.sponsorMobileCode} ${formData.sponsorMobile}`);
-      submissionData.append("WhatsApp", `${formData.whatsappCode} ${formData.whatsappNumber}`);
-      submissionData.append("IBAN", formData.iban);
-      submissionData.append("Inside/Outside", formData.insideOutside);
-      submissionData.append("P.O. Box", formData.poBox);
-      if (formData.address) submissionData.append("Address", formData.address);
+      if (formData.email) submissionData.append("Email", formData.email);
+      if (formData.mobile) submissionData.append("Mobile", `${formData.mobileCode} ${formData.mobile}`);
       if (formData.remarks) submissionData.append("Remarks", formData.remarks);
-      submissionData.append("Payment Method", formData.paymentMethod);
 
       // Append files if any
       if (formData.files && formData.files.length > 0) {
@@ -137,98 +120,30 @@ function ApplyFormContent() {
           />
         </div>
 
-        {/* Full Name of Sponsor */}
+        {/* Email ID */}
         <div>
           <label className="block text-gray-700 font-medium mb-1">
-            Full Name of Sponsor <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            name="sponsorName"
-            value={formData.sponsorName}
-            onChange={handleInputChange}
-            placeholder="Enter Full Name of Sponsor"
-            required
-            className="w-full border border-gray-300 p-2.5 rounded-sm focus:outline-none focus:border-gray-500"
-          />
-        </div>
-
-        {/* Sponsor Email ID */}
-        <div>
-          <label className="block text-gray-700 font-medium mb-1">
-            Sponsor Email ID <span className="text-red-500">*</span>
+            Email ID
           </label>
           <input
             type="email"
-            name="sponsorEmail"
-            value={formData.sponsorEmail}
+            name="email"
+            value={formData.email}
             onChange={handleInputChange}
             placeholder="Enter Your valid Email"
-            required
             className="w-full border border-gray-300 p-2.5 rounded-sm focus:outline-none focus:border-gray-500"
           />
         </div>
 
-        {/* Dependent Relation */}
+        {/* Mobile No. */}
         <div>
           <label className="block text-gray-700 font-medium mb-1">
-            Dependent Relation
-          </label>
-          <select
-            name="dependentRelation"
-            value={formData.dependentRelation}
-            onChange={handleInputChange}
-            className="w-full border border-gray-300 p-2.5 rounded-sm focus:outline-none focus:border-gray-500"
-          >
-            <option value="">Select Relation</option>
-            <option value="Wife">Wife</option>
-            <option value="Husband">Husband</option>
-            <option value="Son">Son</option>
-            <option value="Daughter">Daughter</option>
-            <option value="Parent">Parent</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-
-        {/* Sponsor Mobile No. */}
-        <div>
-          <label className="flex justify-between text-gray-700 font-medium mb-1">
-            <span>Sponsor Mobile No. <span className="text-red-500">*</span></span>
-            <span className="text-xs text-gray-400 font-normal">Sponsor's working phone without any zeros</span>
+            Mobile No.
           </label>
           <div className="flex">
             <select
-              name="sponsorMobileCode"
-              value={formData.sponsorMobileCode}
-              onChange={handleInputChange}
-              className="border border-gray-300 border-r-0 p-2.5 rounded-l-sm bg-gray-50 focus:outline-none"
-            >
-              <option value="+971">🇦🇪 +971</option>
-              <option value="+966">🇸🇦 +966</option>
-              <option value="+44">🇬🇧 +44</option>
-              <option value="+1">🇺🇸 +1</option>
-              {/* Add more as needed */}
-            </select>
-            <input
-              type="tel"
-              name="sponsorMobile"
-              value={formData.sponsorMobile}
-              onChange={handleInputChange}
-              required
-              className="flex-1 border border-gray-300 p-2.5 rounded-r-sm focus:outline-none focus:border-gray-500"
-            />
-          </div>
-        </div>
-
-        {/* WhatsApp No. */}
-        <div>
-          <label className="block text-gray-700 font-medium mb-1">
-            WhatsApp No. <span className="text-red-500">*</span>
-          </label>
-          <div className="flex">
-            <select
-              name="whatsappCode"
-              value={formData.whatsappCode}
+              name="mobileCode"
+              value={formData.mobileCode}
               onChange={handleInputChange}
               className="border border-gray-300 border-r-0 p-2.5 rounded-l-sm bg-gray-50 focus:outline-none"
             >
@@ -239,78 +154,12 @@ function ApplyFormContent() {
             </select>
             <input
               type="tel"
-              name="whatsappNumber"
-              value={formData.whatsappNumber}
+              name="mobile"
+              value={formData.mobile}
               onChange={handleInputChange}
-              required
               className="flex-1 border border-gray-300 p-2.5 rounded-r-sm focus:outline-none focus:border-gray-500"
             />
           </div>
-        </div>
-
-        {/* Account IBAN */}
-        <div>
-          <label className="block text-gray-700 font-medium mb-1">
-            Account IBAN <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            name="iban"
-            value={formData.iban}
-            onChange={handleInputChange}
-            placeholder="Enter IBAN Number"
-            required
-            className="w-full border border-gray-300 p-2.5 rounded-sm focus:outline-none focus:border-gray-500"
-          />
-        </div>
-
-        {/* Inside/Outside */}
-        <div>
-          <label className="flex justify-between text-gray-700 font-medium mb-1">
-            <span>Inside/Outside <span className="text-red-500">*</span></span>
-            <span className="text-xs text-gray-400 font-normal">Applicable only for entry permit applications</span>
-          </label>
-          <select
-            name="insideOutside"
-            value={formData.insideOutside}
-            onChange={handleInputChange}
-            required
-            className="w-full border border-gray-300 p-2.5 rounded-sm focus:outline-none focus:border-gray-500"
-          >
-            <option value="Inside">Inside</option>
-            <option value="Outside">Outside</option>
-          </select>
-        </div>
-
-        {/* P.O. Box */}
-        <div>
-          <label className="block text-gray-700 font-medium mb-1">
-            P.O. Box <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            name="poBox"
-            value={formData.poBox}
-            onChange={handleInputChange}
-            placeholder="P.O. Box Number"
-            required
-            className="w-full border border-gray-300 p-2.5 rounded-sm focus:outline-none focus:border-gray-500"
-          />
-        </div>
-
-        {/* Address */}
-        <div>
-          <label className="block text-gray-700 font-medium mb-1">
-            Address
-          </label>
-          <textarea
-            name="address"
-            value={formData.address}
-            onChange={handleInputChange}
-            placeholder="Address Information"
-            rows={4}
-            className="w-full border border-gray-300 p-2.5 rounded-sm focus:outline-none focus:border-gray-500 resize-none"
-          ></textarea>
         </div>
 
         {/* Remarks */}
@@ -326,25 +175,6 @@ function ApplyFormContent() {
             rows={4}
             className="w-full border border-gray-300 p-2.5 rounded-sm focus:outline-none focus:border-gray-500 resize-none"
           ></textarea>
-        </div>
-
-        {/* Payment Method */}
-        <div>
-          <label className="block text-gray-700 font-medium mb-1">
-            Payment Method <span className="text-red-500">*</span>
-          </label>
-          <select
-            name="paymentMethod"
-            value={formData.paymentMethod}
-            onChange={handleInputChange}
-            required
-            className="w-full border border-gray-300 p-2.5 rounded-sm focus:outline-none focus:border-gray-500"
-          >
-            <option value="">Select Payment Method</option>
-            <option value="Credit Card">Credit Card / Debit Card</option>
-            <option value="Bank Transfer">Bank Transfer</option>
-            <option value="Cash">Cash (at office)</option>
-          </select>
         </div>
 
         {/* Documents Required */}
@@ -374,6 +204,7 @@ function ApplyFormContent() {
               type="file"
               id="file-upload"
               multiple
+              required={formData.files.length === 0}
               className="hidden"
               onChange={handleFileSelect}
             />
