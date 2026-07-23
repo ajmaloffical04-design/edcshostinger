@@ -72,6 +72,24 @@ export default function ContactPage() {
                 </div>
               </div>
             </motion.div>
+
+            {/* Google Map */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="bg-white p-2 rounded-2xl shadow-xl border border-gray-100 overflow-hidden h-[300px]"
+            >
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.98427635504!2d55.29398838685144!3d25.27111437112372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f432f9d8696c7%3A0x777e3e666cffe1e1!2sEjaz%20Documents%20Clearing%20Services!5e0!3m2!1sen!2sin!4v1784809925874!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0, borderRadius: '0.75rem' }} 
+                allowFullScreen={false} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </motion.div>
           </div>
 
           {/* Contact Form */}
