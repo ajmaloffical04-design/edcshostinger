@@ -3,67 +3,54 @@
 import { useState } from "react";
 import { FileText, CheckCircle2, MessageCircle, Landmark, ArrowRight, Brain, Rocket, Tag, Headset } from "lucide-react";
 import Header from "@/components/layout/Header";
+import Link from "next/link";
 
 const setupOptions = [
   {
-    id: "mainland",
-    title: "Mainland Company Formation",
-    desc: "Full mainland company setup with Dubai DED trade license, complete documentation, and government approvals.",
-    tags: ["DED Trade License", "Commercial/Industrial", "Professional License", "Instant License"],
+    id: "llc-company-formation",
+    title: "LLC Company Formation",
+    desc: "Set up your Limited Liability Company in the UAE mainland with 100% foreign ownership options.",
+    tags: ["Mainland LLC", "100% Ownership", "Trade License", "Sponsor Services"],
     category: "Formation"
   },
   {
-    id: "freezone",
-    title: "Free Zone Setup",
-    desc: "Company formation in all major UAE free zones — DMCC, JAFZA, SHAMS, IFZA, RAKEZ and more with 100% foreign ownership.",
-    tags: ["100% Foreign Ownership", "Zero Corporate Tax", "No Customs Duty", "Multiple Free Zones"],
+    id: "free-zones",
+    title: "Free Zones",
+    desc: "Company formation in all major UAE free zones with zero corporate tax and easy setup processes.",
+    tags: ["100% Foreign Ownership", "Tax Benefits", "No Customs Duty", "Fast Setup"],
     category: "Formation"
   },
   {
-    id: "offshore",
-    title: "Offshore Company",
-    desc: "RAK ICC and JAFZA offshore company setup for international business, asset protection, and tax optimization.",
-    tags: ["RAK ICC", "JAFZA Offshore", "Asset Protection", "Privacy Benefits"],
-    category: "Formation"
-  },
-  {
-    id: "license",
-    title: "Trade License",
-    desc: "Trade license renewal, amendment, and new application support across all UAE jurisdictions and business activities.",
-    tags: ["New License", "License Renewal", "Activity Amendment", "All Jurisdictions"],
+    id: "professional-license",
+    title: "Professional License",
+    desc: "Ideal for service providers, artisans, and professionals wanting 100% ownership in the mainland.",
+    tags: ["Service Providers", "Consultants", "100% Ownership", "Local Service Agent"],
     category: "Licensing"
   },
   {
-    id: "investor",
-    title: "Investor Visa",
-    desc: "Investor and partner residence visa processing as part of your company formation package, including family sponsorship.",
-    tags: ["2-Year Investor Visa", "Family Sponsorship", "Partner Visa"],
-    category: "Visas"
-  },
-  {
-    id: "bank",
-    title: "Corporate Bank Account",
-    desc: "Assistance opening corporate bank accounts with leading UAE banks including Emirates NBD, ADCB, FAB, and Mashreq.",
-    tags: ["All Major Banks", "Online Banking", "Multi-Currency", "Fast Approval"],
-    category: "Banking"
-  },
-  {
-    id: "office",
-    title: "Office & Ejari",
-    desc: "Virtual office, shared desk, and dedicated office space with Ejari registration for visa and license requirements.",
-    tags: ["Virtual Office", "Shared Desk", "Dedicated Office", "Ejari Registration"],
-    category: "Office"
-  },
-  {
-    id: "establishment",
-    title: "Establishment Card",
-    desc: "Immigration establishment card application and renewal for your company to sponsor employees and partners.",
-    tags: ["New EC Application", "EC Renewal", "Employee Quota", "Fast Processing"],
+    id: "commercial-license",
+    title: "Commercial License",
+    desc: "Trade locally and internationally with a commercial license for general trading and specific goods.",
+    tags: ["General Trading", "Import & Export", "Mainland Trading", "Retail"],
     category: "Licensing"
+  },
+  {
+    id: "industrial-license",
+    title: "Industrial License",
+    desc: "For manufacturing and industrial operations with warehouse and factory setup assistance.",
+    tags: ["Manufacturing", "Warehousing", "Factory Setup", "Industrial Activities"],
+    category: "Licensing"
+  },
+  {
+    id: "consulting",
+    title: "Consulting for Every Business",
+    desc: "Expert advisory services tailored to your specific industry and business model in the UAE.",
+    tags: ["Business Advisory", "Market Research", "Legal Compliance", "Strategic Planning"],
+    category: "Consulting"
   }
 ];
 
-const tabs = ["All", "Formation", "Licensing", "Visas", "Banking", "Office"];
+const tabs = ["All", "Formation", "Licensing", "Consulting"];
 
 export default function BusinessSetupPage() {
   const [activeTab, setActiveTab] = useState("All");
@@ -76,14 +63,22 @@ export default function BusinessSetupPage() {
     <main className="min-h-screen bg-[#FAFAFA]">
       <Header />
       
-      <section className="pt-40 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-4 tracking-tight">
+      <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center max-w-4xl mx-auto mb-12">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 tracking-tight">
             Comprehensive Setup <span className="font-medium text-gray-400">Impacts Your Business Growth</span>
           </h1>
+          <div className="mt-6">
+            <Link 
+              href="/apply?service=business-setup" 
+              className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-edcs-gold hover:bg-yellow-500 rounded-md transition-colors shadow-sm"
+            >
+              Apply for this service
+            </Link>
+          </div>
           
           {/* Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mt-12 bg-white p-2 rounded-full border border-gray-100 shadow-sm mx-auto w-fit">
+          <div className="flex flex-wrap items-center justify-center gap-2 mt-10 bg-white p-2 rounded-full border border-gray-100 shadow-sm mx-auto w-fit">
             {tabs.map((tab) => (
               <button
                 key={tab}

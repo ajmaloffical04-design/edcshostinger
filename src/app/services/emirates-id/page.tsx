@@ -25,6 +25,14 @@ export default function EmiratesIdPage() {
           <p className="text-xl text-white/90 max-w-2xl">
             Get your UAE Emirates ID services completed quickly and efficiently with our professional assistance.
           </p>
+          <div className="mt-8">
+            <Link 
+              href="/apply?service=emirates-id" 
+              className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-edcs-gold hover:bg-yellow-500 rounded-md transition-colors shadow-sm"
+            >
+              Apply for this service
+            </Link>
+          </div>
         </div>
       </section>
 

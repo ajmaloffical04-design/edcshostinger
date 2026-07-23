@@ -19,18 +19,36 @@ export default function Header() {
   }, []);
 
   const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about-us" },
     { 
-      name: "Services", 
-      href: "/services",
+      name: "Business Setup", 
+      href: "/services/business-setup",
       submenu: [
-        { name: "Business Setup", href: "/services/business-setup" },
-        { name: "UAE Visa Services", href: "/services/visa-services" },
-        { name: "Premium Services", href: "/services/premium-services" }
+        { name: "LLC Company Formation", href: "/services/business-setup/llc-company-formation" },
+        { name: "Free Zones", href: "/services/business-setup/free-zones" },
+        { name: "Professional License", href: "/services/business-setup/professional-license" },
+        { name: "Commercial License", href: "/services/business-setup/commercial-license" },
+        { name: "Industrial License", href: "/services/business-setup/industrial-license" },
+        { name: "Consulting for Every Business", href: "/services/business-setup/consulting" }
       ]
     },
-    { name: "About Us", href: "/about-us" },
-    { name: "Documentation", href: "/documentation" },
-    { name: "Track Application", href: "/track-application" },
+    { 
+      name: "Pro Services", 
+      href: "/services/pro-services",
+      submenu: [
+        { name: "Amer Services", href: "/services/pro-services/amer-services" },
+        { name: "Tasheel Services", href: "/services/pro-services/tasheel-services" },
+        { name: "Golden Visa", href: "/services/pro-services/golden-visa" },
+        { name: "DED Services", href: "/services/pro-services/ded-services" },
+        { name: "Family Visa", href: "/services/pro-services/family-visa" },
+        { name: "Investor Visa", href: "/services/pro-services/investor-visa" },
+        { name: "Maid Visa", href: "/services/pro-services/maid-visa" }
+      ]
+    },
+    { name: "Translation Services", href: "/services/translation" },
+    { name: "Certificate Attestation", href: "/services/certificate-attestation" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (

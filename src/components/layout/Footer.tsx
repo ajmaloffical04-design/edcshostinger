@@ -130,19 +130,24 @@ export default function Footer() {
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-edcs-gold mr-3 mt-0.5 flex-shrink-0" />
                 <span className="text-gray-300 text-sm leading-relaxed">
-                  123 Business Avenue, Diplomatic Area, Dubai, UAE
+                  Gold Souk Gate Number 3, Metro Building, ground Floor, Deira, Dubai-U.A.E
                 </span>
               </li>
-              <li className="flex items-center">
-                <Phone className="h-5 w-5 text-edcs-gold mr-3 flex-shrink-0" />
-                <a href="tel:+971501234567" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  +971 50 123 4567
-                </a>
+              <li className="flex items-start">
+                <Phone className="h-5 w-5 text-edcs-gold mr-3 flex-shrink-0 mt-0.5" />
+                <div className="flex flex-col">
+                  <a href="tel:+97142264321" className="text-gray-300 hover:text-white transition-colors text-sm">
+                    +971 4 22 64 321
+                  </a>
+                  <a href="tel:+971586481006" className="text-gray-300 hover:text-white transition-colors text-sm mt-1">
+                    +971 58 648 1006
+                  </a>
+                </div>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-edcs-gold mr-3 flex-shrink-0" />
-                <a href="mailto:info@edcs.com" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  info@edcs.com
+                <a href="mailto:ejazdoc30@gmail.com" className="text-gray-300 hover:text-white transition-colors text-sm">
+                  ejazdoc30@gmail.com
                 </a>
               </li>
             </ul>

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { useState } from "react";
 
-export default function TasheelServicesPage() {
+export default function DEDServicesPage() {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -27,8 +27,8 @@ export default function TasheelServicesPage() {
       <section className="relative h-[40vh] min-h-[300px] flex items-center bg-[#29323c]">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1920&auto=format&fit=crop"
-            alt="Tasheel Services"
+            src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1920&auto=format&fit=crop"
+            alt="DED Services"
             fill
             className="object-cover opacity-40 mix-blend-overlay"
           />
@@ -37,8 +37,16 @@ export default function TasheelServicesPage() {
           <Link href="/services" className="inline-flex items-center text-white/80 hover:text-white mb-4 transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Services
           </Link>
-          <p className="text-sm text-edcs-gold mb-2 font-medium tracking-wider uppercase">EDCS - Tasheel Services</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Tasheel Services</h1>
+          <p className="text-sm text-edcs-gold mb-2 font-medium tracking-wider uppercase">EDCS - DED Services</p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">DED Services</h1>
+          <div className="mt-8">
+            <Link 
+              href="/apply?service=ded-services" 
+              className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-edcs-gold hover:bg-yellow-500 rounded-md transition-colors shadow-sm"
+            >
+              Apply for this service
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -47,12 +55,12 @@ export default function TasheelServicesPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           
           <div>
-            <h2 className="text-3xl font-bold text-edcs-navy mb-4">Professional Tasheel Services in the UAE</h2>
+            <h2 className="text-3xl font-bold text-edcs-navy mb-4">Comprehensive DED Services in Dubai</h2>
             <p className="text-gray-700 leading-relaxed text-lg mb-6 font-medium">
-              Complete Tasheel services for employers and employees across the UAE. We assist with labor-related applications quickly and efficiently, ensuring compliance with UAE labor regulations.
+              Comprehensive Dubai Department of Economy and Tourism (DET/DED) services for businesses at every stage. We simplify licensing, approvals, and compliance with fast, reliable support.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              We provide professional Tasheel services for work permits, labor contracts, company labor files, and employee-related applications. Experience fast processing, transparent pricing, and dedicated support across all UAE emirates through our expert team.
+              We provide end-to-end DED services for company formation, trade license renewals, amendments, approvals, and business compliance. Experience fast processing, transparent pricing, and expert support across Dubai.
             </p>
           </div>
         </div>
@@ -61,49 +69,57 @@ export default function TasheelServicesPage() {
       {/* Services Included Section (Gray Background) */}
       <section className="py-8 lg:py-16 bg-gray-50 border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-edcs-navy mb-6">Our Tasheel Services Include</h2>
+          <h2 className="text-2xl font-bold text-edcs-navy mb-6">Our DED Services Include</h2>
           
           <div className="bg-white text-gray-900 rounded-xl p-8 shadow-xl">
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm md:text-base font-medium text-gray-700">
               <li className="flex items-start">
                 <span className="text-edcs-navy mr-3 font-bold mt-1 text-xs">◆</span>
-                New Work Permit Processing
+                New Trade License Registration
               </li>
               <li className="flex items-start">
                 <span className="text-edcs-navy mr-3 font-bold mt-1 text-xs">◆</span>
-                Employment Visa Applications
+                Trade License Renewal
               </li>
               <li className="flex items-start">
                 <span className="text-edcs-navy mr-3 font-bold mt-1 text-xs">◆</span>
-                Labor Contract Registration & Renewal
+                License Amendment
               </li>
               <li className="flex items-start">
                 <span className="text-edcs-navy mr-3 font-bold mt-1 text-xs">◆</span>
-                Work Permit Renewal
+                Business Activity Addition & Removal
               </li>
               <li className="flex items-start">
                 <span className="text-edcs-navy mr-3 font-bold mt-1 text-xs">◆</span>
-                Work Permit Cancellation
+                Trade Name Reservation
               </li>
               <li className="flex items-start">
                 <span className="text-edcs-navy mr-3 font-bold mt-1 text-xs">◆</span>
-                Company Labor File Services
+                Initial Approval
               </li>
               <li className="flex items-start">
                 <span className="text-edcs-navy mr-3 font-bold mt-1 text-xs">◆</span>
-                Quota Applications & Modifications
+                Memorandum of Association (MOA) Amendments
               </li>
               <li className="flex items-start">
                 <span className="text-edcs-navy mr-3 font-bold mt-1 text-xs">◆</span>
-                Labour Card Services
+                Local Service Agent & Partner Changes
               </li>
               <li className="flex items-start">
                 <span className="text-edcs-navy mr-3 font-bold mt-1 text-xs">◆</span>
-                Employee Status Updates
+                Branch Registration
               </li>
               <li className="flex items-start">
                 <span className="text-edcs-navy mr-3 font-bold mt-1 text-xs">◆</span>
-                Fine Payment & Compliance Assistance
+                License Cancellation
+              </li>
+              <li className="flex items-start">
+                <span className="text-edcs-navy mr-3 font-bold mt-1 text-xs">◆</span>
+                Company Information Updates
+              </li>
+              <li className="flex items-start">
+                <span className="text-edcs-navy mr-3 font-bold mt-1 text-xs">◆</span>
+                DED Approvals & NOC Assistance
               </li>
             </ul>
           </div>
@@ -163,7 +179,7 @@ export default function TasheelServicesPage() {
                   className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-edcs-navy focus:border-edcs-navy outline-none transition-all bg-white"
                 >
                   <option value="">--select purpose--</option>
-                  <option value="tasheel">Tasheel Service</option>
+                  <option value="ded">DED Service</option>
                   <option value="general">General Enquiry</option>
                 </select>
               </div>

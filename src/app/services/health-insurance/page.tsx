@@ -25,6 +25,14 @@ export default function HealthInsurancePage() {
           <p className="text-xl text-white/90 max-w-2xl">
             Protect yourself, your family, and your employees with comprehensive UAE Health Insurance solutions.
           </p>
+          <div className="mt-8">
+            <Link 
+              href="/apply?service=health-insurance" 
+              className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-edcs-gold hover:bg-yellow-500 rounded-md transition-colors shadow-sm"
+            >
+              Apply for this service
+            </Link>
+          </div>
         </div>
       </section>
 

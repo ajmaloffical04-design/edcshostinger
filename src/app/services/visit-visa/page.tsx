@@ -39,6 +39,14 @@ export default function VisitVisaPage() {
           </Link>
           <p className="text-sm text-edcs-gold mb-2 font-medium tracking-wider uppercase">EDCS - Visit Visa</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Visit Visa</h1>
+          <div className="mt-8">
+            <Link 
+              href="/apply?service=visit-visa" 
+              className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-edcs-gold hover:bg-yellow-500 rounded-md transition-colors shadow-sm"
+            >
+              Apply for this service
+            </Link>
+          </div>
         </div>
       </section>
 

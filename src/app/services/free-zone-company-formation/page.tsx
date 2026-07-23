@@ -23,6 +23,14 @@ export default function FreeZoneCompanyFormationPage() {
           <p className="text-xl text-white/90 max-w-2xl">
             Fast, cost-effective, and investor-friendly setup process in the UAE's leading Free Zones.
           </p>
+          <div className="mt-8">
+            <Link 
+              href="/apply?service=free-zone-company-formation" 
+              className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-edcs-gold hover:bg-yellow-500 rounded-md transition-colors shadow-sm"
+            >
+              Apply for this service
+            </Link>
+          </div>
         </div>
       </section>
 

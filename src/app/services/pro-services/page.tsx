@@ -6,72 +6,86 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Link from "next/link";
 
-const visaOptions = [
+const proOptions = [
   {
-    id: "tourist",
-    title: "Tourist Visa",
-    desc: "30, 60, or 90 days single and multiple entry visit visas for tourists and leisure travelers visiting the UAE.",
-    tags: ["Single & Multiple Entry", "30/60/90 Days", "Fast 2-3 Days", "Affordable Rates"],
-    category: "Visit Visas"
+    id: "amer",
+    title: "AMER Services",
+    desc: "Complete immigration and visa processing services through official AMER centers.",
+    tags: ["Entry Permits", "Visa Stamping", "Emirates ID", "Status Change"],
+    category: "Government",
+    href: "/services/pro-services/amer-services"
   },
   {
-    id: "employment",
-    title: "Employment Visa",
-    desc: "Complete employment visa processing including labour card, medical fitness test, and Emirates ID issuance.",
-    tags: ["Labour Card", "Medical Typing", "Emirates ID", "Company Sponsorship"],
-    category: "Employment"
+    id: "ded",
+    title: "DED Services",
+    desc: "Department of Economic Development services for business licensing and registration.",
+    tags: ["Trade License", "Initial Approval", "Name Reservation", "License Renewal"],
+    category: "Business",
+    href: "/services/pro-services/ded-services"
+  },
+  {
+    id: "tasheel",
+    title: "Tasheel Services",
+    desc: "Ministry of Human Resources and Emiratisation (MOHRE) services for labour and employment.",
+    tags: ["Labour Quota", "Offer Letter", "Work Permit", "Labour Contract"],
+    category: "Government",
+    href: "/services/pro-services/tasheel-services"
   },
   {
     id: "family",
     title: "Family Visa",
-    desc: "Sponsor your spouse, children, and parents with complete family residence visa packages.",
-    tags: ["Spouse & Children", "Parent Sponsorship", "Newborn Visa", "Visa Renewal"],
-    category: "Residence"
-  },
-  {
-    id: "partner",
-    title: "Partner Visa",
-    desc: "Residence visa for business partners and shareholders in mainland, free zone, and offshore companies.",
-    tags: ["Mainland Partners", "Free Zone", "Shareholder Visa", "2-Year Validity"],
-    category: "Investor"
-  },
-  {
-    id: "investor",
-    title: "Investor Visa",
-    desc: "2, 3, 5, and 10-year investor and golden visa options for property and business investors.",
-    tags: ["2/3/5/10 Year", "Property Investors", "Business Investors", "Family Included"],
-    category: "Investor"
+    desc: "Sponsor your family members with end-to-end family visa processing.",
+    tags: ["Spouse Visa", "Children Visa", "Parent Visa", "Medical & ID"],
+    category: "Visas",
+    href: "/services/pro-services/family-visa"
   },
   {
     id: "golden",
     title: "Golden Visa",
-    desc: "UAE Golden Visa for exceptional professionals, investors, entrepreneurs, and specialized talents.",
-    tags: ["10-Year Validity", "No Sponsor Needed", "Family Included", "Multiple Entry"],
-    category: "Residence"
+    desc: "10-year Golden Visa processing for investors, professionals, and exceptional talents.",
+    tags: ["Investor", "Professional", "Talent", "Family Included"],
+    category: "Visas",
+    href: "/services/pro-services/golden-visa"
+  },
+  {
+    id: "investor",
+    title: "Investor Visa",
+    desc: "Partner and Investor visa processing for mainland and free zone company owners.",
+    tags: ["Company Setup", "Partner Visa", "Establishment Card", "2-Year Visa"],
+    category: "Visas",
+    href: "/services/pro-services/investor-visa"
+  },
+  {
+    id: "maid",
+    title: "Maid Visa",
+    desc: "Domestic worker and maid visa processing including all medical and contract typing.",
+    tags: ["Domestic Worker", "Tadbeer", "Medical Fitness", "Labour Contract"],
+    category: "Visas",
+    href: "/services/pro-services/maid-visa"
   }
 ];
 
-const tabs = ["All Visas", "Visit Visas", "Employment", "Residence", "Investor"];
+const tabs = ["All Services", "Government", "Business", "Visas"];
 
-export default function UaeVisaPage() {
-  const [activeTab, setActiveTab] = useState("All Visas");
+export default function ProServicesPage() {
+  const [activeTab, setActiveTab] = useState("All Services");
 
-  const filteredOptions = activeTab === "All Visas" 
-    ? visaOptions 
-    : visaOptions.filter(opt => opt.category === activeTab);
+  const filteredOptions = activeTab === "All Services" 
+    ? proOptions 
+    : proOptions.filter(opt => opt.category === activeTab);
 
   return (
     <main className="min-h-screen bg-[#FAFAFA]">
       <Header />
       
-      <section className="pt-40 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-4 tracking-tight">
-            Comprehensive Visa <span className="font-medium text-gray-400">Processing & Services</span>
+      <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center max-w-4xl mx-auto mb-12">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 tracking-tight">
+            Comprehensive PRO <span className="font-medium text-gray-400">& Corporate Services</span>
           </h1>
-          <div className="mt-8">
+          <div className="mt-6">
             <Link 
-              href="/apply?service=visa-services" 
+              href="/apply?service=pro-services" 
               className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-edcs-gold hover:bg-yellow-500 rounded-md transition-colors shadow-sm"
             >
               Apply for this service
@@ -79,7 +93,7 @@ export default function UaeVisaPage() {
           </div>
           
           {/* Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mt-12 bg-white p-2 rounded-full border border-gray-100 shadow-sm mx-auto w-fit">
+          <div className="flex flex-wrap items-center justify-center gap-2 mt-10 bg-white p-2 rounded-full border border-gray-100 shadow-sm mx-auto w-fit">
             {tabs.map((tab) => (
               <button
                 key={tab}
@@ -99,41 +113,42 @@ export default function UaeVisaPage() {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredOptions.map((option) => (
-            <div
-              key={option.id}
-              className="group relative rounded-2xl p-8 transition-all duration-500 min-h-[400px] flex flex-col justify-between cursor-pointer border border-gray-100 bg-white hover:-translate-y-1"
-            >
-              {/* Hover Gradient Background */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#4A5568] to-[#1A202C] opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-xl" />
-              
-              {/* Card Content */}
-              <div className="relative z-10 flex flex-col h-full">
-                <div>
-                  <span className="text-[#38A169] text-sm font-medium mb-4 block group-hover:text-green-300 transition-colors">
-                    Details
-                  </span>
-                  <h3 className="text-xl font-medium text-gray-900 mb-3 group-hover:text-white transition-colors leading-tight">
-                    {option.title}
-                  </h3>
-                  <p className="text-gray-500 leading-relaxed group-hover:text-gray-200 transition-colors text-sm">
-                    {option.desc}
-                  </p>
-                </div>
+            <Link href={option.href} key={option.id}>
+              <div
+                className="group relative rounded-2xl p-8 transition-all duration-500 min-h-[400px] flex flex-col justify-between cursor-pointer border border-gray-100 bg-white hover:-translate-y-1 h-full"
+              >
+                {/* Hover Gradient Background */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#4A5568] to-[#1A202C] opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-xl" />
+                
+                {/* Card Content */}
+                <div className="relative z-10 flex flex-col h-full">
+                  <div>
+                    <span className="text-[#38A169] text-sm font-medium mb-4 block group-hover:text-green-300 transition-colors">
+                      Details
+                    </span>
+                    <h3 className="text-xl font-medium text-gray-900 mb-3 group-hover:text-white transition-colors leading-tight">
+                      {option.title}
+                    </h3>
+                    <p className="text-gray-500 leading-relaxed group-hover:text-gray-200 transition-colors text-sm">
+                      {option.desc}
+                    </p>
+                  </div>
 
-                <div className="mt-8 pt-6 border-t border-gray-100 group-hover:border-gray-600 transition-colors">
-                  <ul className="space-y-3">
-                    {option.tags.map((tag, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-gray-400 group-hover:text-gray-300 mt-0.5 shrink-0" />
-                        <span className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors leading-tight">
-                          {tag}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="mt-8 pt-6 border-t border-gray-100 group-hover:border-gray-600 transition-colors">
+                    <ul className="space-y-3">
+                      {option.tags.map((tag, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <CheckCircle2 className="w-4 h-4 text-gray-400 group-hover:text-gray-300 mt-0.5 shrink-0" />
+                          <span className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors leading-tight">
+                            {tag}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
@@ -152,7 +167,7 @@ export default function UaeVisaPage() {
               How It <span className="text-edcs-gold">Works</span>
             </h2>
             <p className="text-base text-gray-500">
-              From consultation to visa approval — our streamlined 4-step process gets you ready fast.
+              From consultation to completion — our streamlined 4-step process handles it all.
             </p>
           </div>
 
@@ -171,7 +186,7 @@ export default function UaeVisaPage() {
                   Free Consultation
                 </h3>
                 <p className="text-gray-500 leading-relaxed group-hover:text-gray-200 transition-colors text-sm">
-                  Discuss your visa needs and let us guide you on the right type and requirements.
+                  Discuss your corporate or personal PRO requirements and get expert advice.
                 </p>
               </div>
               <div className="hidden md:block absolute -right-5 top-1/2 -translate-y-1/2 z-0">
@@ -193,7 +208,7 @@ export default function UaeVisaPage() {
                   Document Preparation
                 </h3>
                 <p className="text-gray-500 leading-relaxed group-hover:text-gray-200 transition-colors text-sm">
-                  We prepare, translate and review all required documents for immigration submission.
+                  We prepare, translate and organize all necessary paperwork for government processing.
                 </p>
               </div>
               <div className="hidden md:block absolute -right-5 top-1/2 -translate-y-1/2 z-0">
@@ -212,10 +227,10 @@ export default function UaeVisaPage() {
                   <Landmark className="w-8 h-8 text-edcs-navy group-hover:text-white transition-colors" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-medium text-gray-900 mb-3 group-hover:text-white transition-colors leading-tight">
-                  Immigration Submission
+                  Government Submission
                 </h3>
                 <p className="text-gray-500 leading-relaxed group-hover:text-gray-200 transition-colors text-sm">
-                  Our PRO team handles all government submissions, medical, and biometrics tracking.
+                  Our PRO team handles all government submissions and tracking efficiently.
                 </p>
               </div>
               <div className="hidden md:block absolute -right-5 top-1/2 -translate-y-1/2 z-0">
@@ -234,10 +249,10 @@ export default function UaeVisaPage() {
                   <CheckCircle2 className="w-8 h-8 text-edcs-navy group-hover:text-white transition-colors" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-medium text-gray-900 mb-3 group-hover:text-white transition-colors leading-tight">
-                  Visa Issued
+                  Delivery
                 </h3>
                 <p className="text-gray-500 leading-relaxed group-hover:text-gray-200 transition-colors text-sm">
-                  Receive your approved visa and Emirates ID ready to use in the UAE.
+                  Receive your completed documents, licenses, and visas ready to use in the UAE.
                 </p>
               </div>
             </div>
@@ -257,7 +272,7 @@ export default function UaeVisaPage() {
               <div className="h-[1px] w-8 bg-edcs-gold"></div>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-edcs-navy mb-6">
-              Why Choose Us for <span className="text-edcs-gold">Visa Services</span>
+              Why Choose Us for <span className="text-edcs-gold">PRO Services</span>
             </h2>
           </div>
 
@@ -273,10 +288,10 @@ export default function UaeVisaPage() {
                   <Brain className="w-8 h-8 text-edcs-navy group-hover:text-white transition-colors" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-medium text-gray-900 mb-3 group-hover:text-white transition-colors leading-tight">
-                  Immigration Expertise
+                  Corporate Expertise
                 </h3>
                 <p className="text-gray-500 leading-relaxed group-hover:text-gray-200 transition-colors text-sm">
-                  Deep hands-on experience with UAE immigration regulations and government procedures.
+                  Deep hands-on experience with UAE corporate regulations and government procedures.
                 </p>
               </div>
             </div>
@@ -295,7 +310,7 @@ export default function UaeVisaPage() {
                   Fast Processing
                 </h3>
                 <p className="text-gray-500 leading-relaxed group-hover:text-gray-200 transition-colors text-sm">
-                  Streamlined typing and submissions ensure your visa is approved in record time.
+                  Dedicated PROs ensure your company documents are processed in record time.
                 </p>
               </div>
             </div>
@@ -341,6 +356,7 @@ export default function UaeVisaPage() {
         </div>
       </section>
       
+      <Footer />
     </main>
   );
 }

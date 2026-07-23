@@ -25,6 +25,14 @@ export default function LegalTranslationPage() {
           <p className="text-xl text-white/90 max-w-2xl">
             Ensure your documents are accurately translated and accepted by UAE government authorities.
           </p>
+          <div className="mt-8">
+            <Link 
+              href="/apply?service=legal-translation" 
+              className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-edcs-gold hover:bg-yellow-500 rounded-md transition-colors shadow-sm"
+            >
+              Apply for this service
+            </Link>
+          </div>
         </div>
       </section>
 

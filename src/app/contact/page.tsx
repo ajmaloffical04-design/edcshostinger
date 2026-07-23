@@ -35,7 +35,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">Address</p>
-                    <p className="text-gray-600 text-sm mt-1">123 Business Avenue, Diplomatic Area, Dubai, UAE</p>
+                    <p className="text-gray-600 text-sm mt-1">Gold Souk Gate Number 3, Metro Building, ground Floor, Deira, Dubai-U.A.E</p>
                   </div>
                 </div>
 
@@ -45,8 +45,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">Phone</p>
-                    <p className="text-gray-600 text-sm mt-1">+971 50 123 4567</p>
-                    <p className="text-gray-600 text-sm">+971 4 234 5678</p>
+                    <p className="text-gray-600 text-sm mt-1">+971 4 22 64 321</p>
+                    <p className="text-gray-600 text-sm">+971 58 648 1006</p>
                   </div>
                 </div>
 
@@ -56,8 +56,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">Email</p>
-                    <p className="text-gray-600 text-sm mt-1">info@edcs.com</p>
-                    <p className="text-gray-600 text-sm">support@edcs.com</p>
+                    <p className="text-gray-600 text-sm mt-1">ejazdoc30@gmail.com</p>
                   </div>
                 </div>
 

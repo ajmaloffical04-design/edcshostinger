@@ -23,6 +23,14 @@ export default function GoldenVisaPage() {
           <p className="text-xl text-white/90 max-w-2xl">
             Secure long-term residency in the UAE with our end-to-end Golden Visa services.
           </p>
+          <div className="mt-8">
+            <Link 
+              href="/apply?service=golden-visa" 
+              className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-edcs-gold hover:bg-yellow-500 rounded-md transition-colors shadow-sm"
+            >
+              Apply for this service
+            </Link>
+          </div>
         </div>
       </section>
 
