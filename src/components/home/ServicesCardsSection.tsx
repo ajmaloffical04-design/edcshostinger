@@ -10,25 +10,25 @@ const cards = [
     title: "Golden Visa",
     desc: "This visa allows its holders to work and study in the United Arab Emirates without the need for a sponsor.",
     image: "/golden-visa.jpeg",
-    href: "/services/golden-visa"
+    href: "/services/pro-services/golden-visa/"
   },
   {
     title: "Amer Services",
     desc: "Complete your UAE immigration and residency procedures quickly and efficiently with our professional Amer Services. We provide end-to-end assistance for individuals, families, and businesses.",
     image: "/amer.png",
-    href: "/services/amer-services"
+    href: "/services/pro-services/amer-services/"
   },
   {
     title: "Tasheel Services",
     desc: "Simplify your labor and employment procedures with our comprehensive Tasheel services. We provide fast, reliable, and government-compliant assistance for employers.",
     image: "/tasheel.png",
-    href: "/services/tasheel-services"
+    href: "/services/pro-services/tasheel-services/"
   },
   {
     title: "DED Services",
     desc: "Comprehensive Dubai Department of Economy and Tourism (DET/DED) services for businesses at every stage. We simplify licensing, approvals, and compliance with fast, reliable support.",
     image: "/dubai-economy-and-tourism.png",
-    href: "/services/ded-services"
+    href: "/services/pro-services/ded-services/"
   },
   {
     title: "UAE Free Zone Company Formation",
@@ -40,19 +40,19 @@ const cards = [
     title: "Family Visa",
     desc: "If you have a valid UAE resident visa, you can sponsor first-degree family members to come and live with you in the UAE.",
     image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=800&auto=format&fit=crop",
-    href: "/services/family-visa"
+    href: "/services/pro-services/family-visa/"
   },
   {
     title: "Investor Visa",
     desc: "Investors visa in Dubai is an excellent choice for foreign citizens who want to start a business or invest in an existing firm in Dubai.",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop",
-    href: "/services/investor-visa"
+    href: "/services/pro-services/investor-visa/"
   },
   {
     title: "Maid Visa",
     desc: "Sponsoring a maid in Dubai is not an easy task. You need to get acquainted with all the standards and regulations which are involved in the process.",
     image: "/maid-visa.png",
-    href: "/services/maid-visa"
+    href: "/services/pro-services/maid-visa/"
   }
 ];
 

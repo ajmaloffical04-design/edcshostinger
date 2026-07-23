@@ -15,7 +15,7 @@ export default function CertificateAttestationPage() {
             className="object-cover opacity-40 mix-blend-overlay"
           />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 w-full pt-16">
           <Link href="/services" className="inline-flex items-center text-white/80 hover:text-white mb-4 transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Services
           </Link>
@@ -25,30 +25,35 @@ export default function CertificateAttestationPage() {
           <p className="text-xl text-white/90 max-w-2xl">
             Get your documents officially authenticated for use in the UAE or abroad.
           </p>
-          <div className="mt-8">
-            <Link 
-              href="/apply?service=certificate-attestation" 
-              className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-edcs-gold hover:bg-yellow-500 rounded-md transition-colors shadow-sm"
-            >
-              Apply for this service
-            </Link>
-          </div>
+          
+        </div>
+      </section>
+      {/* Apply Button Section (After Hero) */}
+      <section className="py-10 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8">
+          <Link 
+            href={"/apply?service=" + "certificate-attestation"} 
+            className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white bg-[#d4af37] hover:bg-yellow-500 rounded-md transition-colors shadow-sm w-full md:w-auto"
+          >
+            Apply for this service
+          </Link>
         </div>
       </section>
 
       {/* Intro Section */}
-      <section className="py-8 lg:py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+          <div className="max-w-4xl space-y-6">
           <p className="text-gray-700 leading-relaxed text-lg">
             Get your documents officially authenticated for use in the UAE or abroad. We handle the complete attestation process for personal, educational, and commercial documents, ensuring compliance with the relevant authorities.
           </p>
         </div>
-      </section>
+        </div></section>
 
       {/* Services List Section (Colored Banner) */}
-      <section className="py-8 lg:py-16 bg-edcs-navy border-y border-edcs-gold/20 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto mb-10 space-y-4">
+      <section className="py-16 lg:py-24 bg-edcs-navy border-y border-edcs-gold/20 text-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mb-10 space-y-4">
             <h2 className="text-3xl font-bold mb-4">Our Certificate Attestation Services</h2>
             <p className="text-white/90">
               We process a wide variety of documents efficiently.
@@ -84,8 +89,9 @@ export default function CertificateAttestationPage() {
       </section>
 
       {/* Content Section */}
-      <section className="py-8 lg:py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+          <div className="max-w-4xl space-y-12">
           
           {/* Why Choose Us */}
           <div>
@@ -108,7 +114,24 @@ export default function CertificateAttestationPage() {
           </div>
 
         </div>
+        </div></section>
+    
+      {/* Bottom CTA Section */}
+      <section className="py-16 lg:py-24 bg-edcs-navy text-white text-center">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8">
+          <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
+          <p className="text-lg text-white/80 mb-8">
+            Apply now and let our experts handle your service request quickly and efficiently.
+          </p>
+          <Link 
+            href={"/apply?service=" + "certificate-attestation"} 
+            className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-[#0d2040] bg-[#d4af37] hover:bg-yellow-500 rounded-md transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+          >
+            Apply for this service
+          </Link>
+        </div>
       </section>
+
     </main>
   );
 }

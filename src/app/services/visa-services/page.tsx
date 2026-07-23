@@ -64,19 +64,12 @@ export default function UaeVisaPage() {
     <main className="min-h-screen bg-[#FAFAFA]">
       <Header />
       
-      <section className="pt-40 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="pt-40 pb-24 px-6 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-4 tracking-tight">
             Comprehensive Visa <span className="font-medium text-gray-400">Processing & Services</span>
           </h1>
-          <div className="mt-8">
-            <Link 
-              href="/apply?service=visa-services" 
-              className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-edcs-gold hover:bg-yellow-500 rounded-md transition-colors shadow-sm"
-            >
-              Apply for this service
-            </Link>
-          </div>
+          
           
           {/* Tabs */}
           <div className="flex flex-wrap items-center justify-center gap-2 mt-12 bg-white p-2 rounded-full border border-gray-100 shadow-sm mx-auto w-fit">
@@ -137,10 +130,21 @@ export default function UaeVisaPage() {
           ))}
         </div>
       </section>
+      {/* Apply Button Section (After Hero) */}
+      <section className="py-6 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8">
+          <Link 
+            href={"/apply?service=" + "visa-services"} 
+            className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white bg-[#d4af37] hover:bg-yellow-500 rounded-md transition-colors shadow-sm w-full md:w-auto"
+          >
+            Apply for this service
+          </Link>
+        </div>
+      </section>
 
       {/* How It Works Section */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-20">
             <div className="flex items-center justify-center gap-4 mb-4">
@@ -248,7 +252,7 @@ export default function UaeVisaPage() {
 
       {/* Why Choose Us Section */}
       <section className="py-24 bg-[#FAFAFA]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-20">
             <div className="flex items-center justify-center gap-4 mb-4">
@@ -341,6 +345,23 @@ export default function UaeVisaPage() {
         </div>
       </section>
       
+    
+      {/* Bottom CTA Section */}
+      <section className="py-12 lg:py-16 bg-edcs-navy text-white text-center">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8">
+          <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
+          <p className="text-lg text-white/80 mb-8">
+            Apply now and let our experts handle your service request quickly and efficiently.
+          </p>
+          <Link 
+            href={"/apply?service=" + "visa-services"} 
+            className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-[#0d2040] bg-[#d4af37] hover:bg-yellow-500 rounded-md transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+          >
+            Apply for this service
+          </Link>
+        </div>
+      </section>
+
     </main>
   );
 }

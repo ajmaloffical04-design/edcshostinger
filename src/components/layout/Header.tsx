@@ -9,6 +9,11 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [openSubmenus, setOpenSubmenus] = useState<Record<string, boolean>>({});
+
+  const toggleSubmenu = (name: string) => {
+    setOpenSubmenus((prev) => ({ ...prev, [name]: !prev[name] }));
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,7 +31,7 @@ export default function Header() {
       href: "/services/business-setup",
       submenu: [
         { name: "LLC Company Formation", href: "/services/business-setup/llc-company-formation" },
-        { name: "Free Zones", href: "/services/business-setup/free-zones" },
+        { name: "Free Zones", href: "/services/free-zone-company-formation" },
         { name: "Professional License", href: "/services/business-setup/professional-license" },
         { name: "Commercial License", href: "/services/business-setup/commercial-license" },
         { name: "Industrial License", href: "/services/business-setup/industrial-license" },
@@ -46,7 +51,7 @@ export default function Header() {
         { name: "Maid Visa", href: "/services/pro-services/maid-visa" }
       ]
     },
-    { name: "Translation Services", href: "/services/translation" },
+    { name: "Translation Services", href: "/services/legal-translation/" },
     { name: "Certificate Attestation", href: "/services/certificate-attestation" },
     { name: "Contact", href: "/contact" },
   ];
@@ -132,19 +137,43 @@ export default function Header() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-x-4 top-24 z-40 md:hidden bg-white rounded-2xl shadow-2xl p-6"
+            className="fixed inset-x-4 top-24 z-40 md:hidden bg-white rounded-2xl shadow-2xl p-6 max-h-[calc(100vh-120px)] overflow-y-auto"
           >
             <div className="space-y-4">
               {navLinks.map((link) => (
                 <div key={link.name} className="flex flex-col space-y-2">
-                  <Link
-                    href={link.href}
-                    className="block text-gray-900 font-medium text-lg hover:text-blue-600"
-                    onClick={() => !link.submenu && setIsOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                  {link.submenu && (
+                  <div className="flex items-center justify-between">
+                    <Link
+                      href={link.href}
+                      className="block text-gray-900 font-medium text-lg hover:text-blue-600"
+                      onClick={() => !link.submenu && setIsOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                    {link.submenu && (
+                      <button
+                        onClick={() => toggleSubmenu(link.name)}
+                        className="p-2 text-gray-500 hover:text-blue-600 focus:outline-none"
+                      >
+                        <svg
+                          className={`w-5 h-5 transition-transform duration-200 ${
+                            openSubmenus[link.name] ? "rotate-180" : ""
+                          }`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M19 9l-7 7-7-7"
+                          ></path>
+                        </svg>
+                      </button>
+                    )}
+                  </div>
+                  {link.submenu && openSubmenus[link.name] && (
                     <div className="pl-4 border-l-2 border-gray-100 space-y-2 mt-1">
                       {link.submenu.map((subitem) => (
                         <Link

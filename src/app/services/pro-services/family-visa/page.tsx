@@ -33,26 +33,31 @@ export default function FamilyVisaPage() {
             className="object-cover opacity-40 mix-blend-overlay"
           />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 w-full pt-16">
           <Link href="/services" className="inline-flex items-center text-white/80 hover:text-white mb-4 transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Services
           </Link>
           <p className="text-sm text-edcs-gold mb-2 font-medium tracking-wider uppercase">EDCS - Family Visa and Dependent Visa</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Family Visa and Dependent Visa</h1>
-          <div className="mt-8">
-            <Link 
-              href="/apply?service=family-visa" 
-              className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-edcs-gold hover:bg-yellow-500 rounded-md transition-colors shadow-sm"
-            >
-              Apply for this service
-            </Link>
-          </div>
+          
+        </div>
+      </section>
+      {/* Apply Button Section (After Hero) */}
+      <section className="py-10 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8">
+          <Link 
+            href={"/apply?service=" + "family-visa"} 
+            className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white bg-[#d4af37] hover:bg-yellow-500 rounded-md transition-colors shadow-sm w-full md:w-auto"
+          >
+            Apply for this service
+          </Link>
         </div>
       </section>
 
       {/* Intro Section */}
-      <section className="py-8 lg:py-16 bg-white border-b border-gray-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="py-16 lg:py-24 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+          <div className="max-w-4xl space-y-12">
           
           {/* Dependent Visa Application */}
           <div>
@@ -80,11 +85,12 @@ export default function FamilyVisaPage() {
             </p>
           </div>
         </div>
-      </section>
+        </div></section>
 
       {/* Required Documents Section (Gray Background) */}
-      <section className="py-8 lg:py-16 bg-gray-50 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 lg:py-24 bg-gray-50 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+          <div className="max-w-4xl">
           <h2 className="text-2xl font-bold text-edcs-navy mb-6">Documents Required to Apply for dependent Visa</h2>
           
           <div className="bg-white text-gray-900 rounded-xl p-8 shadow-xl">
@@ -101,11 +107,12 @@ export default function FamilyVisaPage() {
             </ol>
           </div>
         </div>
-      </section>
+        </div></section>
 
       {/* Validity & FAQ Section */}
-      <section className="py-8 lg:py-16 bg-white border-b border-gray-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="py-16 lg:py-24 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+          <div className="max-w-4xl space-y-12">
           
           {/* Validity */}
           <div>
@@ -156,14 +163,14 @@ export default function FamilyVisaPage() {
           </div>
 
         </div>
-      </section>
+        </div></section>
 
       {/* Form Section */}
       <section className="py-20 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 p-8 opacity-5">
            {/* Decorative elements could go here */}
         </div>
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-3xl mx-auto px-6 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-3xl font-bold text-edcs-navy">Get To Know More!</h2>
             <div className="w-8 h-8 rounded-full border-2 border-edcs-navy flex items-center justify-center text-edcs-navy">
@@ -179,7 +186,7 @@ export default function FamilyVisaPage() {
                   type="text" 
                   value={formData.fullName}
                   onChange={(e) => setFormData({...formData, fullName: e.target.value})}
-                  className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-edcs-navy focus:border-edcs-navy outline-none transition-all"
+                  className="w-full border border-gray-300 rounded-md px-6 py-2 focus:ring-2 focus:ring-edcs-navy focus:border-edcs-navy outline-none transition-all"
                   required
                 />
               </div>
@@ -189,7 +196,7 @@ export default function FamilyVisaPage() {
                   type="email" 
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-edcs-navy focus:border-edcs-navy outline-none transition-all"
+                  className="w-full border border-gray-300 rounded-md px-6 py-2 focus:ring-2 focus:ring-edcs-navy focus:border-edcs-navy outline-none transition-all"
                   required
                 />
               </div>
@@ -199,7 +206,7 @@ export default function FamilyVisaPage() {
                   type="tel" 
                   value={formData.phone}
                   onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                  className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-edcs-navy focus:border-edcs-navy outline-none transition-all"
+                  className="w-full border border-gray-300 rounded-md px-6 py-2 focus:ring-2 focus:ring-edcs-navy focus:border-edcs-navy outline-none transition-all"
                   required
                 />
               </div>
@@ -208,7 +215,7 @@ export default function FamilyVisaPage() {
                 <select 
                   value={formData.purpose}
                   onChange={(e) => setFormData({...formData, purpose: e.target.value})}
-                  className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-edcs-navy focus:border-edcs-navy outline-none transition-all bg-white"
+                  className="w-full border border-gray-300 rounded-md px-6 py-2 focus:ring-2 focus:ring-edcs-navy focus:border-edcs-navy outline-none transition-all bg-white"
                 >
                   <option value="">--select purpose--</option>
                   <option value="family_visa">Family/Dependent Visa</option>
@@ -223,7 +230,7 @@ export default function FamilyVisaPage() {
                 rows={3}
                 value={formData.message}
                 onChange={(e) => setFormData({...formData, message: e.target.value})}
-                className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-edcs-navy focus:border-edcs-navy outline-none transition-all resize-none"
+                className="w-full border border-gray-300 rounded-md px-6 py-2 focus:ring-2 focus:ring-edcs-navy focus:border-edcs-navy outline-none transition-all resize-none"
               ></textarea>
             </div>
 
@@ -234,6 +241,23 @@ export default function FamilyVisaPage() {
               SUBMIT
             </button>
           </form>
+        </div>
+      </section>
+
+    
+      {/* Bottom CTA Section */}
+      <section className="py-16 lg:py-24 bg-edcs-navy text-white text-center">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8">
+          <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
+          <p className="text-lg text-white/80 mb-8">
+            Apply now and let our experts handle your service request quickly and efficiently.
+          </p>
+          <Link 
+            href={"/apply?service=" + "family-visa"} 
+            className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-[#0d2040] bg-[#d4af37] hover:bg-yellow-500 rounded-md transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+          >
+            Apply for this service
+          </Link>
         </div>
       </section>
 
