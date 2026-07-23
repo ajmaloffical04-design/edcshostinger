@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRef } from "react";
 
 const cards = [
   {
@@ -57,9 +58,23 @@ const cards = [
 ];
 
 export default function ServicesCardsSection() {
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: -350, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: 350, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="py-16 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
         <div className="mb-12 text-center max-w-3xl mx-auto">
           <p className="text-gray-600 text-lg leading-relaxed">
@@ -67,7 +82,30 @@ export default function ServicesCardsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Carousel Controls */}
+        <div className="absolute right-4 top-0 md:top-4 flex space-x-2 z-10 hidden sm:flex">
+          <button 
+            onClick={scrollLeft} 
+            className="p-2 rounded-full bg-gray-50 border border-gray-200 hover:bg-gray-100 transition-colors shadow-sm text-gray-600"
+            aria-label="Scroll left"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button 
+            onClick={scrollRight} 
+            className="p-2 rounded-full bg-gray-50 border border-gray-200 hover:bg-gray-100 transition-colors shadow-sm text-gray-600"
+            aria-label="Scroll right"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Carousel Container */}
+        <div 
+          ref={carouselRef}
+          className="flex overflow-x-auto gap-6 pb-8 pt-4 snap-x snap-mandatory hide-scrollbar"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
           {cards.map((card, index) => (
             <motion.div
               key={card.title}
@@ -75,12 +113,12 @@ export default function ServicesCardsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="bg-white rounded-2xl p-6 shadow-[0_2px_10px_rgb(0,0,0,0.06)] border border-gray-50 flex flex-col h-full hover:shadow-lg transition-shadow"
+              className="bg-white rounded-2xl p-6 shadow-[0_2px_10px_rgb(0,0,0,0.06)] border border-gray-50 flex flex-col h-full hover:shadow-lg transition-shadow shrink-0 snap-start w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
             >
               <h3 className="text-xl font-semibold text-gray-900 mb-2">{card.title}</h3>
               <p className="text-gray-500 text-sm mb-6 flex-grow">{card.desc}</p>
               
-              <div className="h-40 w-full rounded-xl overflow-hidden mb-6 relative bg-gray-50/10">
+              <div className="h-40 w-full rounded-xl overflow-hidden mb-6 relative bg-gray-50/10 shrink-0">
                 <Image 
                   src={card.image} 
                   alt={card.title} 
@@ -98,6 +136,13 @@ export default function ServicesCardsSection() {
             </motion.div>
           ))}
         </div>
+        
+        {/* CSS to hide scrollbar for webkit browsers */}
+        <style dangerouslySetInnerHTML={{__html: `
+          .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+        `}} />
       </div>
     </section>
   );
