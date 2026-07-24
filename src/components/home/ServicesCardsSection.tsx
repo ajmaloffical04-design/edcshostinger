@@ -82,59 +82,84 @@ export default function ServicesCardsSection() {
           </p>
         </div>
 
-        {/* Carousel Controls */}
-        <div className="absolute right-4 top-0 md:top-4 flex space-x-2 z-10 hidden sm:flex">
+        {/* Carousel Area Wrapper */}
+        <div className="relative">
+          {/* Left Arrow Button */}
           <button 
             onClick={scrollLeft} 
-            className="p-2 rounded-full bg-gray-50 border border-gray-200 hover:bg-gray-100 transition-colors shadow-sm text-gray-600"
+            className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors text-gray-600 hidden md:flex items-center justify-center shrink-0"
             aria-label="Scroll left"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-6 h-6" />
           </button>
+
+          {/* Right Arrow Button */}
           <button 
             onClick={scrollRight} 
-            className="p-2 rounded-full bg-gray-50 border border-gray-200 hover:bg-gray-100 transition-colors shadow-sm text-gray-600"
+            className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors text-gray-600 hidden md:flex items-center justify-center shrink-0"
             aria-label="Scroll right"
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-6 h-6" />
           </button>
-        </div>
 
-        {/* Carousel Container */}
-        <div 
-          ref={carouselRef}
-          className="flex overflow-x-auto gap-6 pb-8 pt-4 snap-x snap-mandatory hide-scrollbar"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
-          {cards.map((card, index) => (
-            <motion.div
-              key={card.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="bg-white rounded-2xl p-6 shadow-[0_2px_10px_rgb(0,0,0,0.06)] border border-gray-50 flex flex-col h-full hover:shadow-lg transition-shadow shrink-0 snap-start w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
+          {/* Carousel Container */}
+          <div 
+            ref={carouselRef}
+            className="flex overflow-x-auto gap-6 pb-8 pt-4 snap-x snap-mandatory hide-scrollbar items-stretch"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {cards.map((card, index) => (
+              <motion.div
+                key={card.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="bg-white rounded-2xl p-6 shadow-[0_2px_10px_rgb(0,0,0,0.06)] border border-gray-50 flex flex-col hover:shadow-lg transition-shadow shrink-0 snap-start w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
+              >
+                <div className="flex flex-col flex-grow">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{card.title}</h3>
+                  <p className="text-gray-500 text-sm mb-6">{card.desc}</p>
+                </div>
+                
+                <div className="flex flex-col mt-auto">
+                  <div className="h-40 w-full rounded-xl overflow-hidden mb-6 relative bg-gray-50/10 shrink-0">
+                    <Image 
+                      src={card.image} 
+                      alt={card.title} 
+                      fill 
+                      className="object-cover"
+                    />
+                  </div>
+
+                  <div>
+                    <Link href={card.href} className="text-edcs-navy font-medium inline-flex items-center group w-fit hover:text-edcs-gold transition-colors">
+                      Get Started
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Mobile Navigation Arrows */}
+          <div className="flex justify-center items-center gap-4 mt-2 md:hidden">
+            <button 
+              onClick={scrollLeft} 
+              className="w-12 h-12 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors text-gray-600 flex items-center justify-center shrink-0"
+              aria-label="Scroll left"
             >
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{card.title}</h3>
-              <p className="text-gray-500 text-sm mb-6 flex-grow">{card.desc}</p>
-              
-              <div className="h-40 w-full rounded-xl overflow-hidden mb-6 relative bg-gray-50/10 shrink-0">
-                <Image 
-                  src={card.image} 
-                  alt={card.title} 
-                  fill 
-                  className="object-cover"
-                />
-              </div>
-
-              <div className="mt-auto">
-                <Link href={card.href} className="text-edcs-navy font-medium inline-flex items-center group w-fit hover:text-edcs-gold transition-colors">
-                  Get Started
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </motion.div>
-          ))}
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button 
+              onClick={scrollRight} 
+              className="w-12 h-12 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors text-gray-600 flex items-center justify-center shrink-0"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
         </div>
         
         {/* CSS to hide scrollbar for webkit browsers */}
